@@ -43,7 +43,7 @@ function App() {
   return (
     <div className="App">
       <div className="Countdown">
-        <h1>Harpers Birthday!</h1>
+        <h1>Harpers Birthday Countdown!</h1>
           <h1>
             {timerComponents.length ? timerComponents : <span>Time's up!</span>}
           </h1>
