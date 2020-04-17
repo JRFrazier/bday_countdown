@@ -1,5 +1,5 @@
 body {
-    background: url(harper_bg.svg) no-repeat;
+    background: url(/harper_bg.svg) no-repeat;
     background-size: auto;
 }
 .App {
