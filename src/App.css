@@ -1,6 +1,6 @@
 body {
-    background: url(harper_bg.svg) no-repeat;
-    background-size: auto;
+    background: url(/harper_bg.png) no-repeat;
+    background-size: 100%;
 }
 .App {
     display: flex;
