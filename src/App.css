@@ -1,15 +1,28 @@
 body {
-    background: url(/harper_bg.png) no-repeat;
-    background-size: 100%;
+    background: url(/harper_bg7.svg) no-repeat;
+    background-size: 1700px;
 }
 .App {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
 }
 .Countdown {
     text-align: center;
     margin: 50px 150px 0 0;
-    color: rgb(157, 0, 248);
-    font-family: 'Pacifico', cursive;
-    font-size: 20px;
+    color: rgb(241, 88, 255);
+    /* font-family: 'Pacifico', cursive; */
+    font-family: 'Iceberg', cursive;
+    font-size: 30px;
+}
+.image-row {
+    display: flex;
+    justify-content: space-between;
+}
+.Frozen-logo {
+    height: 500px;
+    width: 500px;
+}
+.Balloons {
+    height: 500px;
+    width: 400px;
 }

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import frozen from "./frozen2.png"
+import balloons from "./harper_balloons.svg"
 import './App.css'
 
 function App() {
@@ -8,10 +10,10 @@ function App() {
 
     if (difference > 0) {
       timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60)
+        d: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        h: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        m: Math.floor((difference / 1000 / 60) % 60),
+        s: Math.floor((difference / 1000) % 60)
       };
     }
 
@@ -35,7 +37,7 @@ function App() {
 
     timerComponents.push(
       <span>
-        {timeLeft[interval]} {interval}{" "}
+        {timeLeft[interval]}{interval}{" "}
       </span>
     );
   });
@@ -47,6 +49,11 @@ function App() {
           <h1>
             {timerComponents.length ? timerComponents : <span>Time's up!</span>}
           </h1>
+        </div>
+        <div className="image-row">
+          <img src={balloons} className="Balloons" alt="balloons"/>
+          <img src={frozen} className="Frozen-logo" alt="logo" />
+          <img src={balloons} className="Balloons" alt="balloons"/>
         </div>
     </div>
   );
