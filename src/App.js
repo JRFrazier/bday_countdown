@@ -2,53 +2,23 @@ import React, { useEffect, useState } from "react";
 import frozen from "./frozen2.png"
 import balloons from "./harper_balloons.svg"
 import './App.css'
+// At the component you want to use confetti
+import ConfettiGenerator from "confetti-js";
 
 function App() {
-  const calculateTimeLeft = () => {
-    const difference = +new Date("2020-05-05") - +new Date();
-    let timeLeft = {};
-
-    if (difference > 0) {
-      timeLeft = {
-        d: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        h: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        m: Math.floor((difference / 1000 / 60) % 60),
-        s: Math.floor((difference / 1000) % 60)
-      };
-    }
-
-    return timeLeft;
-  };
-
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-  useEffect(() => {
-    setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-  });
-
-  const timerComponents = [];
-
-  Object.keys(timeLeft).forEach(interval => {
-    if (!timeLeft[interval]) {
-      return;
-    }
-
-    timerComponents.push(
-      <span>
-        {timeLeft[interval]}{interval}{" "}
-      </span>
-    );
-  });
+  React.useEffect(() => {
+    const confettiSettings = {"target":"confetti","max":"1000","size":"1","animate":true,"props":["circle","square","triangle","line"],"colors":[[165,104,246],[230,61,135],[0,199,228],[253,214,126]],"clock":"25","rotate":false,"width":"1680","height":"971","start_from_edge":false,"respawn":true} 
+    const confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
+   
+    return () => confetti.clear();
+  }, []) // add the var dependencies or not
 
   return (
     <div className="App">
+    <canvas id="confetti" className="confetti"></canvas>
       <div className="Countdown">
-        <h1>Harpers Birthday Countdown!</h1>
-          <h1>
-            {timerComponents.length ? timerComponents : <span>Time's up!</span>}
-          </h1>
+        <h1>Happt Birthday Harper!</h1>
         </div>
         <div className="image-row">
           <img src={balloons} className="Balloons" alt="balloons"/>

@@ -26,3 +26,6 @@ body {
     height: 500px;
     width: 400px;
 }
+.confetti {
+    position: absolute;
+}
