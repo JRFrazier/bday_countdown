@@ -18,7 +18,7 @@ function App() {
     <div className="App">
     <canvas id="confetti" className="confetti"></canvas>
       <div className="Countdown">
-        <h1>Happt Birthday Harper!</h1>
+        <h1>Happy Birthday Harper!</h1>
         </div>
         <div className="image-row">
           <img src={balloons} className="Balloons" alt="balloons"/>
